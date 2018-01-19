@@ -1,0 +1,42 @@
+#intro {
+    width: 100%;
+    height: 600px;
+    background-image: url("../img/night-sky.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+.fullscreen_bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url("../img/night-sky.jpg");
+    background-repeat: repeat;
+}
+
+.main-box {
+    color: #e6e6e6;
+    max-width: 500px;
+    margin: 120px auto;
+    text-align: center;
+    padding: 60px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    min-height: 389px;
+}
+
+.main-box h1 {
+    margin-bottom: 40px;
+}
+
+#logging-night-form button {
+    margin-top: 35px;
+}
+
+#icao-code {
+    text-transform: uppercase;
+}

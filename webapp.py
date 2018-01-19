@@ -20,21 +20,21 @@ if dev_mode == "true":
 else:
     application.config['DEBUG'] = False
 
-@application.before_first_request
-def enable_housekeeping(run_interval=3600):
-    cease_continuous_run = threading.Event()
-
-    class ScheduleThread(threading.Thread):
-        @staticmethod
-        def run():
-            while not cease_continuous_run.is_set():
-                schedule.run_pending()
-                time.sleep(run_interval)
-
-    continuous_thread = ScheduleThread()
-    continuous_thread.start()
-
-    schedule.every(6).hours.do(LoggingNight.garbage_collect_cache)
+#@application.before_first_request
+#def enable_housekeeping(run_interval=3600):
+#    cease_continuous_run = threading.Event()
+#
+#    class ScheduleThread(threading.Thread):
+#        @staticmethod
+#        def run():
+#            while not cease_continuous_run.is_set():
+#                schedule.run_pending()
+#                time.sleep(run_interval)
+#
+#    continuous_thread = ScheduleThread()
+#    continuous_thread.start()
+#
+#    schedule.every(6).hours.do(LoggingNight.garbage_collect_cache)
 
 @application.route('/')
 def index():
